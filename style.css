@@ -22,6 +22,7 @@ body, header, nav, main, section, footer, h1, h2, h3, div, img, ul {
 
 /* body*/
 body {
+  margin: 24px;
   font-family: Arial, sans-serif;
   background-color: antiquewhite;
   color: #333; /*text color */
@@ -69,6 +70,9 @@ nav a:hover {
 /* Section */
 section {
   margin: 3rem 0;
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  gap: 10px;
 }
 
 h2 {
@@ -79,8 +83,9 @@ h2 {
 
 /* About */
 #about {
-  padding: 40px 20px;
-  background-color: #fff;
+  flex: 1 1 300px; /* Flex-grow, flex-shrink, flex-basis */
+  background-color: aquamarine;
+  padding: 20px;
   text-align: center;
 }
 
@@ -270,3 +275,34 @@ footer {
   bottom: 10px;
   right: 10px;
 }
+
+@media (max-width: 600px) {
+  body {
+    margin: 8px;
+    background-color: purple;
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  header {
+    text-align: center;
+    background-color: rgb(96, 128, 0);
+    padding: 24px
+  }
+}
+
+/* In the above example, the margin is changed based on screen size. 
+Specifically, on all screens below or equal to 600px, the margin will be 8px, 
+and on all screens above 600px, it will be 24px. Really, that’s all there is to it. 
+You can create some complex shifting layouts with just this knowledge alone. 
+You can create an unlimited number of media queries in a single document. 
+You can also put any number of style definitions inside a media query.  
+
+In the above example, our queries specify a max-width which will apply styles 
+to any screen resolution below or equal to the specified value. Said another way: 
+a max-width query will apply on any screen up to the defined max-width. 
+It is also possible to define a min-width, which applies to any screen resolution 
+above or equal to the given value. max-height and min-height are also valid.
+*/
